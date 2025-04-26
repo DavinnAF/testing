@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XI TEI 1 - SMK Karya Bahana Mandiri 1</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Loading Screen */
+    #loading {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .loader-icon {
+      font-size: 3rem;
+      animation: bounce 1s infinite;
+      color: #00ffd0;
+      margin-bottom: 20px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #eee;
+      border-top: 5px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #00d2ff;
+    }
+
+    header h2, header h3 {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #7fffd4;
+    }
+
+    /* Portfolio Section */
+    .portfolio, .contact {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .portfolio h2, .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffde59;
+    }
+
+    /* Contact */
+    .contact ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact li {
+      margin: 10px 0;
+    }
+
+    .contact a {
+      color: #00ffd0;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Icons */
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.8rem;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00ffd0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      font-size: 0.9rem;
+    }
+  </style>
+
+  <!-- ICONS (FontAwesome CDN) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading">
+    <div class="loader-icon">
+      <i class="fas fa-cogs"></i>
+    </div>
+    <div class="spinner"></div>
+    <p style="margin-top: 15px; color: #aaa;">Memuat Website...</p>
+  </div>
+
+  <!-- Main Content -->
+  <div id="content" class="hidden">
+    <header>
+      <h1>XI TEI 1</h1>
+      <h2>Teknik Elektronika Industri</h2>
+      <h3>SMK Karya Bahana Mandiri 1</h3>
+    </header>
+
+    <section class="portfolio">
+      <h2>Portofolio Kelas</h2>
+      <p>Selamat datang di website portofolio XI TEI 1! Di sini kamu bisa lihat semua karya terbaik kita!</p>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Person</h2>
+      <p>Hubungi kami untuk informasi lebih lanjut:</p>
+      <ul>
+        <li>WhatsApp: <a href="https://wa.me/6281234567890" target="_blank">0812-3456-7890</a></li>
+        <li>Email: <a href="mailto:xitei1@karyabahana.sch.id">xitei1@karyabahana.sch.id</a></li>
+      </ul>
+
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 XI TEI 1 - SMK Karya Bahana Mandiri 1</p>
+    </footer>
+  </div>
+
+  <script>
+    // Loading Screen
+    window.addEventListener("load", function() {
+      const loading = document.getElementById("loading");
+      const content = document.getElementById("content");
+      
+      setTimeout(() => {
+        loading.style.opacity = "0";
+        loading.style.transition = "opacity 0.5s ease";
+        setTimeout(() => {
+          loading.style.display = "none";
+          content.classList.remove("hidden");
+        }, 500);
+      }, 2000); // Tampil loading 2 detik
+    });
+  </script>
+
+</body>
+</html>
